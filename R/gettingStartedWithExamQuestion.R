@@ -33,6 +33,18 @@ invDF = read_csv(fileName)
 # view contents
 invDF
 
+# now get all of Costco's Invoices
+
+# create an empty data frame to hold the data
+invDF = invDF[0,]  ## the zeroeth row
+
+# now get all contents and fill the empty data frame
+for (invName in invFileNames) {
+  fileName = file.path("data",folderName,invName)
+  newRowsDF = read_csv(fileName)
+  invDF = bind_rows(invDF,newRowsDF)
+}
+
 # sample question and answer:
 # how many of widget4 were
 # purchased by Costco
