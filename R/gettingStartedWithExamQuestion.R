@@ -1,7 +1,8 @@
-## this script will get you 
-## two of the four points on the 
-## related exam question
-## for the remaining two points,
+## With very minor modifications (a few characters),
+## this script will get you very close to 
+## earning two of the four points on the 
+## related exam question.
+## For the remaining two points,
 ## you will need to write more code
 
 # install.packages("tidyverse")
@@ -33,9 +34,10 @@ invDF = read_csv(fileName)
 invDF
 
 # sample question and answer:
-# how many of widget5 were
+# how many of widget4 were
 # purchased by Costco
 invDF %>%
-  filter(partNum == "widget5") %>%
+  filter(partNum == "widget4") %>%
   group_by(partNum) %>%
   summarize(totalQty = sum(quantity))
+## answer is 459 of widget4
